@@ -1,1 +1,12 @@
 123456
+echo "# Demo01" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/AshokGfsd/Demo01.git
+git push -u origin main
+vsc
+prettier
+intellicode & api
+
