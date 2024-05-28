@@ -61,8 +61,8 @@ function shuffle(arr, arr1, arr2, arr3) {
   ]);
 }
 function gen() {
-  var num =(document.getElementById("count")).value
-  console.log(num)
+  var num = document.getElementById("count").value;
+  console.log(num);
   for (i = 0; i < num; i++) {
     shuffle(team100, team75, team50, team25);
   }
@@ -83,9 +83,12 @@ function gen() {
       td.innerText = temp[j];
       tr.append(td);
       if (j == 10) {
-        td = document.createElement("li");
+        td = document.createElement("td");
+        td1 = document.createElement("li");
         td.innerText = store;
-        list.append(td);
+        td1.innerText = store;
+        tr.append(td);
+        list.append(td1);
       }
       table.append(tr);
     }
