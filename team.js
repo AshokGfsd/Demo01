@@ -107,7 +107,7 @@ function gen() {
   }
   cont = document.getElementById("container");
   cont.append(table);
-  loader.style.display="none"
+  setTimeout(()=>{loader.style.display="none"},5000)
 }
 
 
