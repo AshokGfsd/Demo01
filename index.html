@@ -4,33 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      table {
-        border-collapse: collapse;
-        border: solid black 4px;
-        width: 100%;
-      }
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border: solid black 2px;
-        border-bottom: 1px solid #ddd;
-      }
-      tr:nth-child(even) {
-        background-color: #1ee9e9;
-      }
-      tr:hover {
-        background-color: coral;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <input id="count" type="number" placeholder="team count">
+    <input id="count" type="number" placeholder="team count" />
     <button onclick="gen()">Generate</button>
-    <input type="button" value="Print this page" onClick="window.print()">
+    <input type="button" value="Print this page" onClick="window.print()" />
     <div id="container"></div>
+    <div class="loader"></div>
     <button onclick="sortList()">Sort</button>
     <ul id="id01"></ul>
     <script src="./team.js"></script>
