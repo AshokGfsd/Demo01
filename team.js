@@ -1,3 +1,4 @@
+var loader=document.querySelector(".loader")
 const check_duplicate_in_array = (input_array) => {
   const duplicates = input_array.filter(
     (item, index) => input_array.indexOf(item) !== index
@@ -13,6 +14,7 @@ var total = [[1,2,3,4,5,6,7,8,9,10,11]];
 var duplicate = [];
 
 function shuffle(arr, arr1, arr2, arr3) {
+  loader.style.display="block"
   arrTemp100 = [...arr];
   arrTemp75 = [...arr1];
   arrTemp50 = [...arr2];
@@ -69,19 +71,20 @@ function shuffle(arr, arr1, arr2, arr3) {
   duplicate.push(temp1)
   
 }
-var loader=document.querySelector(".loader")
 function gen() {
   var num = document.getElementById("count").value;
+  loader.style.display="block"
   for (i = 0; i < num; i++) {
-    loader.style.display="block"
     shuffle(team100, team75, team50, team25);
   }
-  console.log(check_duplicate_in_array(duplicate));
-  // console.log(total);
-  // console.log(duplicate);
-  var list = document.getElementById("id01");
-  var table = document.createElement("table");
-  for (i = 0; i < total.length; i++) {
+  setTimeout(()=>{
+    
+    console.log(check_duplicate_in_array(duplicate));
+    // console.log(total);
+    // console.log(duplicate);
+    var list = document.getElementById("id01");
+    var table = document.createElement("table");
+    for (i = 0; i < total.length; i++) {
     var tr = document.createElement("tr");
     td = document.createElement("td");
     td.innerText = i;
@@ -107,12 +110,14 @@ function gen() {
   }
   cont = document.getElementById("container");
   cont.append(table);
-  setTimeout(()=>{loader.style.display="none"},5000)
+  loader.style.display="none"
+},100)
 }
 
 
 function sortList() {
   loader.style.display="block"
+  setTimeout(()=>{
   var list, i, switching, b, shouldSwitch;
   list = document.getElementById("id01");
   switching = true;
@@ -132,5 +137,5 @@ function sortList() {
       switching = true;
     }
   }
-  setTimeout(()=>{loader.style.display="none"},10000)
+    loader.style.display="none"},100)
 }
